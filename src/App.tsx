@@ -7,11 +7,13 @@ import { useState } from 'react'
 import PlatformSelector from './components/PlatformSelector'
 import { Platform } from './components/hooks/useGames'
 import SortSelector from './components/SortSelector'
+import { MdAirlineSeatReclineExtra } from 'react-icons/md'
 
 export interface GameQuery {
   genre: Genre | null;
   platform: Platform | null;
   sortOrder: string;
+  searchText: string;
 }
 
 function App() {
@@ -27,7 +29,7 @@ function App() {
     lg: '250px 1fr'
    }} >
     <GridItem area="nav" >
-      <NavBar></NavBar>
+      <NavBar onSearch={(searchText) => setGameQuery({...gameQuery, searchText})} />
     </GridItem>
     <Show above='lg'>
     <GridItem area="aside" paddingX={5} >
