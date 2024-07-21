@@ -8,6 +8,7 @@ import PlatformSelector from './components/PlatformSelector'
 import { Platform } from './components/hooks/useGames'
 import SortSelector from './components/SortSelector'
 import { MdAirlineSeatReclineExtra } from 'react-icons/md'
+import GameHeading from './components/GameHeading'
 
 export interface GameQuery {
   genre: Genre | null;
@@ -37,6 +38,7 @@ function App() {
     </GridItem>
     </Show>
     <GridItem area="main">
+      <GameHeading gameQuery={gameQuery} />
       <HStack spacing={5} paddingX={10} marginTop={5} >
         <PlatformSelector selectedPlatform={gameQuery.platform} onSelectPlatform={(platform) => setGameQuery({...gameQuery ,platform})} />
         <SortSelector sortOrder={gameQuery.sortOrder} onSelectSortOrder={(sortOrder) => setGameQuery({...gameQuery, sortOrder})} />
