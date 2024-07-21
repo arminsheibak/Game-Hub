@@ -7,7 +7,6 @@ import { useState } from 'react'
 import PlatformSelector from './components/PlatformSelector'
 import { Platform } from './components/hooks/useGames'
 import SortSelector from './components/SortSelector'
-import { MdAirlineSeatReclineExtra } from 'react-icons/md'
 import GameHeading from './components/GameHeading'
 
 export interface GameQuery {
