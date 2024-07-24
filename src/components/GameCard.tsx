@@ -19,7 +19,7 @@ const GameCard = ({ game }: Props) => {
         transition: "transform 0.15s ease-in",
       }}
     >
-      <Image src={getCroppedImageUrl(game.background_image)} />
+      <Link to={`/games/${game.slug}`}><Image src={getCroppedImageUrl(game.background_image)} objectFit='cover' /></Link>
       <CardBody>
         <HStack justifyContent="space-between" marginBottom={3}>
           <PlatformIconList

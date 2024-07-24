@@ -12,12 +12,12 @@ const ExpandableText = ({children}: Props) => {
   if (!children) return null;
 
   if (children.length <= limit)
-    return (<Text>{children}</Text>)
+    return (<Text marginBottom={10} >{children}</Text>)
 
   const summary = (expanded) ?  children : children.substring(0, limit) + '...'
 
   return (
-  <Text>
+  <Text marginBottom={10}>
     {summary}
     <Button onClick={() => setExpanded(!expanded)} size='xs' marginLeft={1} fontWeight="bold" colorScheme="yellow" >{(expanded) ? 'Show Less' : 'Read More'}</Button>
   </Text>
